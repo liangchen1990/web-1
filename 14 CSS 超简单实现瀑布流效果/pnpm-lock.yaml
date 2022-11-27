@@ -5,6 +5,8 @@ specifiers:
   autoprefixer: ^10.4.13
   mockjs: ^1.1.0
   open-props: ^1.5.0
+  postcss: ^8.4.19
+  postcss-custom-media: ^9.0.1
   postcss-preset-env: ^7.8.3
   sass: ^1.56.1
   scss: ^0.2.4
@@ -18,6 +20,8 @@ devDependencies:
   '@types/mockjs': 1.0.7
   autoprefixer: 10.4.13_postcss@8.4.19
   mockjs: 1.1.0
+  postcss: 8.4.19
+  postcss-custom-media: 9.0.1_postcss@8.4.19
   postcss-preset-env: 7.8.3_postcss@8.4.19
   sass: 1.56.1
   scss: 0.2.4
@@ -25,6 +29,31 @@ devDependencies:
   vite: 3.2.4_sass@1.56.1
 
 packages:
+
+  /@csstools/css-parser-algorithms/1.0.0_yc2lywpo4a5sk4h3mmwqkmetvu:
+    resolution: {integrity: sha512-lPphY34yfV15tEXiz/SYaU8hwqAhbAwqiTExv5tOfc7QZxT70VVYrsiPBaX1osdWZFowrDEAhHe4H3JnyzbjhA==}
+    engines: {node: ^14 || ^16 || >=18}
+    peerDependencies:
+      '@csstools/css-tokenizer': ^1.0.0
+    dependencies:
+      '@csstools/css-tokenizer': 1.0.0
+    dev: true
+
+  /@csstools/css-tokenizer/1.0.0:
+    resolution: {integrity: sha512-xdFjdQ+zqqkOsmee+kYRieZD9Cqh4hr01YBQ2/8NtTkMMxbtRX18MC50LX6cMrtaLryqmIdZHN9e16/l0QqnQw==}
+    engines: {node: ^14 || ^16 || >=18}
+    dev: true
+
+  /@csstools/media-query-list-parser/1.0.0_oycmb73qbeg4xspzoh5ywrqikm:
+    resolution: {integrity: sha512-HsTj5ejI8NKKZ4IEd6kK2kQZA/JmIVlUV8+XvO/YS9ntrlYPnbmFT3rkqtbxOVfEafblYCNOpeNw1c+fKGkAqw==}
+    engines: {node: ^14 || ^16 || >=18}
+    peerDependencies:
+      '@csstools/css-parser-algorithms': ^1.0.0
+      '@csstools/css-tokenizer': ^1.0.0
+    dependencies:
+      '@csstools/css-parser-algorithms': 1.0.0_yc2lywpo4a5sk4h3mmwqkmetvu
+      '@csstools/css-tokenizer': 1.0.0
+    dev: true
 
   /@csstools/postcss-cascade-layers/1.1.1_postcss@8.4.19:
     resolution: {integrity: sha512-+KdYrpKC5TgomQr2DlZF4lDEpHcoxnj5IGddYYfBWJAKfj1JtuHUIqMa+E1pJJ+z3kvDViWMqyqPlG4Ja7amQA==}
@@ -713,6 +742,18 @@ packages:
     dependencies:
       postcss: 8.4.19
       postcss-value-parser: 4.2.0
+    dev: true
+
+  /postcss-custom-media/9.0.1_postcss@8.4.19:
+    resolution: {integrity: sha512-CimS72gZZ0V4WPFg7t7EqFVLxJ0mqwAJSsuk+LNHSo9ApC7d/SuOr65sKrUY/D8locOh+3s4yO7IdqQ9cRSR7Q==}
+    engines: {node: ^14 || ^16 || >=18}
+    peerDependencies:
+      postcss: ^8.4
+    dependencies:
+      '@csstools/css-parser-algorithms': 1.0.0_yc2lywpo4a5sk4h3mmwqkmetvu
+      '@csstools/css-tokenizer': 1.0.0
+      '@csstools/media-query-list-parser': 1.0.0_oycmb73qbeg4xspzoh5ywrqikm
+      postcss: 8.4.19
     dev: true
 
   /postcss-custom-properties/12.1.10_postcss@8.4.19:
